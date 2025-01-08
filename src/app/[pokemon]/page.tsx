@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import SearchForm from "@/app/components/SearchForm"
 
 interface PokemonPageProps {
   params: Promise<{
@@ -21,6 +22,11 @@ export default async function PokemonPage(props: PokemonPageProps) {
   return (
     <div className="bg-white min-h-screen flex flex-col items-center justify-center text-black gap-5">
       <div className="flex flex-col items-center gap-5">
+        <img src="/pikachu.png" alt="Pokemon Logo" className="mb-4" />
+        <SearchForm />
+        <p className="text-gray-600">
+          Use the search bar above to find your favorite Pokemon.
+        </p>
         <h1 className="text-2xl capitalize font-bold">{data.name}</h1>
         <img src={data.sprites.front_default} alt={data.name} />
         <Link href="/" className="bg-blue-500 text-white rounded-lg px-4 py-2">
