@@ -14,9 +14,9 @@ const Button: FC<ButtonProps> = ({
   className,
   ...props
 }) => {
-  const baseClasses = "rounded-lg px-4 py-2"
-  const enabledClasses = "bg-blue-500 text-white"
-  const disabledClasses = "bg-gray-400 text-white cursor-not-allowed"
+  const baseClasses = "rounded-lg px-4 py-2 text-white"
+  const enabledClasses = "bg-blue-500"
+  const disabledClasses = "bg-gray-400 cursor-not-allowed"
 
   const computedClasses = `${baseClasses} ${disabled ? disabledClasses : enabledClasses} ${className || ""}`
 

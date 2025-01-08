@@ -20,7 +20,7 @@ const SearchForm = () => {
     <form onSubmit={handleSubmit} className="mb-5 flex">
       <Input
         value={pokemonName}
-        onChange={value => setPokemonName(value)}
+        onChange={setPokemonName}
         placeholder="Enter Pokemon Name"
         className="border border-gray-300 rounded-lg p-2 mr-2 text-black"
       />
