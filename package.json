@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,js,json,html}\""
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -22,6 +23,25 @@
     "tailwindcss": "^3.4.1",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
-    "@eslint/eslintrc": "^3"
+    "@eslint/eslintrc": "^3",
+    "husky": "^4.3.8",
+    "lint-staged": "^12.5.0",
+    "prettier": "^3.2.5"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "semi": false,
+    "arrowParens": "avoid"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,json}": [
+      "prettier --write --"
+    ]
   }
 }
