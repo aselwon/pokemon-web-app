@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import SearchForm from "@/app/components/SearchForm"
+import Image from "next/image"
 
 interface PokemonPageProps {
   params: Promise<{
