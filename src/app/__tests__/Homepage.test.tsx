@@ -11,8 +11,12 @@ jest.mock("next/router", () => ({
   }))
 }))
 
-jest.mock("../components/SearchForm", () => () => {
-  return <form role="form">Mocked SearchForm</form>
+jest.mock("../components/SearchForm", () => {
+  const MockSearchForm = () => {
+    return <form role="form">Mocked SearchForm</form>
+  }
+  MockSearchForm.displayName = "MockSearchForm"
+  return MockSearchForm
 })
 
 describe("HomePage Component", () => {

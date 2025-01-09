@@ -5,7 +5,7 @@ import Input from "./Input"
 import Button from "./Button"
 import { useRouter } from "next/navigation"
 
-const SearchForm = () => {
+const SearchForm: React.FC = () => {
   const router = useRouter()
   const [pokemonName, setPokemonName] = useState<string>("")
 
