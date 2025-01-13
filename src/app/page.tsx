@@ -13,16 +13,18 @@ const Home: React.FC = () => {
         height={200}
         data-testid="homepage-image"
       />
-      <h1
-        className="text-2xl font-bold mb-4 text-black"
-        data-testid="homepage-title"
-      >
-        Welcome to Pokemon App!
-      </h1>
-      <SearchForm />
-      <p className="text-gray-600" data-testid="homepage-subtitle">
-        Use the search bar above to find your favorite Pokemon.
-      </p>
+      <div className="flex flex-col gap-5 items-center">
+        <h1
+          className="text-2xl font-bold text-black"
+          data-testid="homepage-title"
+        >
+          Welcome to Pokemon App!
+        </h1>
+        <SearchForm />
+        <p className="text-gray-600" data-testid="homepage-subtitle">
+          Use the search bar above to find your favorite Pokemon.
+        </p>
+      </div>
     </div>
   )
 }
