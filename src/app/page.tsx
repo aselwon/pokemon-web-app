@@ -6,11 +6,11 @@ const Home: React.FC = () => {
   return (
     <div className="bg-white min-h-screen flex flex-col items-center justify-center">
       <Image
-        src="/pikachu.png"
-        alt="Pokemon Logo"
+        src="/ash.png"
+        alt="Ash Ketchum"
         className="mb-4"
-        width={400}
-        height={300}
+        width={200}
+        height={200}
         data-testid="homepage-image"
       />
       <h1

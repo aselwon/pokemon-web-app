@@ -6,28 +6,38 @@ interface PokemonDataProps {
 }
 
 const PokemonData = async ({ pokemon }: PokemonDataProps) => {
-  const results = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-  if (!results.ok) {
+  try {
+    const results = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+
+    if (!results.ok) {
+      return (
+        <p className="font bold text-gray-600">
+          Pokemon not found. Try searching for another one!
+        </p>
+      )
+    }
+
+    const data = await results.json()
+
     return (
-      <p className="text-gray-600">
-        Pokemon not found. Try searching for another one!
+      <div className="flex flex-col items-center gap-5">
+        <h1 className="text-2xl capitalize font-bold">{data.name}</h1>
+        <Image
+          src={data.sprites.front_default}
+          alt={data.name}
+          width={100}
+          height={100}
+        />
+      </div>
+    )
+  } catch (error) {
+    console.error(error)
+    return (
+      <p className="text-red-600">
+        An error occurred while fetching data. Please try again later.
       </p>
     )
   }
-
-  const data = await results.json()
-
-  return (
-    <div className="flex flex-col items-center gap-5">
-      <h1 className="text-2xl capitalize font-bold">{data.name}</h1>
-      <Image
-        src={data.sprites.front_default}
-        alt={data.name}
-        width={100}
-        height={100}
-      />
-    </div>
-  )
 }
 
 export default PokemonData
