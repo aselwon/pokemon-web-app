@@ -11,9 +11,17 @@ const PokemonData = async ({ pokemon }: PokemonDataProps) => {
 
     if (!results.ok) {
       return (
-        <p className="font bold text-gray-600">
-          Pokemon not found. Try searching for another one!
-        </p>
+        <div className="flex items-center flex-col gap-5">
+          <Image
+            src="/sad-pikachu.png"
+            alt="sad pikachu"
+            width={100}
+            height={100}
+          />
+          <p className="font bold text-gray-600">
+            Pokemon not found. Try searching for another one!
+          </p>
+        </div>
       )
     }
 
