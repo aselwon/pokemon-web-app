@@ -2,6 +2,13 @@ import { render } from "@testing-library/react"
 import "@testing-library/jest-dom"
 import PokemonData from "./../components/PokemonData"
 
+jest.mock("next/image", () => ({
+  __esModule: true,
+  default: ({ src, alt, ...props }: { src: string; alt: string }) => {
+    return <img src={src} alt={alt} {...props} />
+  }
+}))
+
 global.fetch = jest.fn()
 
 describe("PokemonData Component", () => {
