@@ -20,7 +20,7 @@ jest.mock("../components/SearchForm", () => {
 })
 
 describe("HomePage Component", () => {
-  it("should render the Pokemon logo image", () => {
+  it("should render the Ash Ketchum image", () => {
     render(<HomePage />)
     const logoImage = screen.getByTestId("homepage-image")
     expect(logoImage).toBeInTheDocument()

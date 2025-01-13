@@ -11,7 +11,7 @@ const PokemonData = async ({ pokemon }: PokemonDataProps) => {
 
     if (!results.ok) {
       return (
-        <p className="text-gray-600">
+        <p className="font bold text-gray-600">
           Pokemon not found. Try searching for another one!
         </p>
       )
@@ -33,7 +33,7 @@ const PokemonData = async ({ pokemon }: PokemonDataProps) => {
   } catch (error) {
     console.error(error)
     return (
-      <p className="text-gray-600">
+      <p className="text-red-600">
         An error occurred while fetching data. Please try again later.
       </p>
     )
