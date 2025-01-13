@@ -4,25 +4,29 @@ import "@testing-library/jest-dom"
 import PokemonPage from "../[pokemon]/page"
 
 jest.mock("next/link", () => {
-  return ({ children, href }) => <a href={href}>{children}</a>
+  const Link = ({ children, href }) => <a href={href}>{children}</a>
+  Link.displayName = "Link"
+  return Link
 })
 
 jest.mock("../components/PokemonData", () => {
-  return function MockPokemonData({ pokemon }) {
-    return <div data-testid="pokemon-data">Pokemon: {pokemon}</div>
-  }
+  const MockPokemonData = ({ pokemon }) => (
+    <div data-testid="pokemon-data">Pokemon: {pokemon}</div>
+  )
+  MockPokemonData.displayName = "MockPokemonData"
+  return MockPokemonData
 })
 
 jest.mock("../components/SearchForm", () => {
-  return function MockSearchForm() {
-    return <div data-testid="search-form">Search Form</div>
-  }
+  const MockSearchForm = () => <div data-testid="search-form">Search Form</div>
+  MockSearchForm.displayName = "MockSearchForm"
+  return MockSearchForm
 })
 
 jest.mock("../components/Loader", () => {
-  return function MockLoader() {
-    return <div data-testid="loader">Loading...</div>
-  }
+  const MockLoader = () => <div data-testid="loader">Loading...</div>
+  MockLoader.displayName = "MockLoader"
+  return MockLoader
 })
 
 describe("PokemonPage Component", () => {
