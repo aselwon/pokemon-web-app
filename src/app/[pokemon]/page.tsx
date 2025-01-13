@@ -20,8 +20,8 @@ export default async function PokemonPage(props: PokemonPageProps) {
     <Suspense fallback={<Loader />}>
       <div className="bg-white min-h-screen flex flex-col items-center justify-center text-black gap-5">
         <div className="flex flex-col items-center gap-5">
-          <SearchForm />
           <PokemonData pokemon={pokemon} />
+          <SearchForm />
           <p className="text-gray-600">
             Use the search bar above to find your favorite Pokemon.
           </p>

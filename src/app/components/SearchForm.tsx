@@ -17,7 +17,7 @@ const SearchForm: React.FC = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mb-5 flex">
+    <form onSubmit={handleSubmit}>
       <Input
         value={pokemonName}
         onChange={setPokemonName}
